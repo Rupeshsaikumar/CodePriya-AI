@@ -1,0 +1,6 @@
+{
+  "name": "CodePriya AI",
+  "description": "Multi-Agent Codebase Evaluator, Hackathon Judge Portal, 3D Architecture Visualizer, and Step-by-Step Spoon-Feeding Project Guide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

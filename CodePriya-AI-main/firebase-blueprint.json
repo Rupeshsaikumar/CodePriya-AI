@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User persona credentials, role, and details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "organization": { "type": "string" },
+        "preferredLanguage": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "lastActiveAt": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "role"]
+    },
+    "AnalysisRecord": {
+      "title": "AnalysisRecord",
+      "description": "Stored project analysis result with AI score, breakdown, and guides",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectName": { "type": "string" },
+        "analyzedAt": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string font" },
+        "userRole": { "type": "string" },
+        "aiPercentage": { "type": "number" },
+        "humanPercentage": { "type": "number" },
+        "analysisData": { "type": "object" }
+      },
+      "required": ["id", "projectName", "analyzedAt", "aiPercentage"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profiles stored by user ID"
+    },
+    "/analyses/{analysisId}": {
+      "schema": "AnalysisRecord",
+      "description": "Saved project code analysis records"
+    }
+  }
+}
